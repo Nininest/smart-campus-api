@@ -32,4 +32,3 @@ public class SensorReading {
     public long getTimestamp()    {return timestamp;  }
     public void setTimestamp(long ts)  {this.timestamp = ts;  }
     }
-    
