@@ -9,7 +9,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Provider
-public class LinkedResourceNotFoundExceptionMapper implements ExceptionMapper<LinkedResourceNotFoundException> {
+public class LinkedResourceNotFoundExceptionMapper
+        implements ExceptionMapper<LinkedResourceNotFoundException> {
+
     @Override
     public Response toResponse(LinkedResourceNotFoundException ex){
         Map<String, Object> body = new LinkedHashMap<>();
