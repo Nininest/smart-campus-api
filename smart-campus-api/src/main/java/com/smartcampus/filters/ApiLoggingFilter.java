@@ -23,7 +23,7 @@ public class ApiLoggingFilter implements ContainerRequestFilter, ContainerRespon
     public void filter(ContainerRequestContext requestContext) throws IOException {
         LOG.info(String.format("[REQUEST] %s %s",
                 requestContext.getMethod(),
-                requestContext.getUriInfo().getRequestUri(),toString()));
+                requestContext.getUriInfo().getRequestUri().toString()));
     }
     @Override
     public void filter(ContainerRequestContext requestContext,
