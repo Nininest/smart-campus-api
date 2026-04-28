@@ -31,7 +31,7 @@ public class Room {
     public void setCapacity(int capacity)   {this.capacity = capacity;  }
 
     public List<String> getSensorIds()    { return sensorIds;       }
-    public void         getSensorIds(List<String> ids) { this.sensorIds = ids;   }
+    public void setSensorIds(List<String> ids) { this.sensorIds = ids;   }
 
     //Convenience helpers used by RoomResource and SensorResource.
     public void addSensorId(String sensorId)   { sensorIds.add(sensorId);}
