@@ -1,8 +1,48 @@
 # smart-campus-api
-RESTful API for managing college room and sensors
+RESTful API for managing college room and sensors with Java, JAX-RS, and embedded Tomcat.
 5C0SC022W Client Server Architectures
 Smart Campus API : Coursework Report
 
+# Tech Stack
+- Java 
+- JAX-RS
+- Embedded Tomcat using Mavan 
+- Memory using ConcurrentHashMap
+
+Base Url: http://localhost:8080/api/v1
+
+# Prerequisites 
+- Java (java -version)
+- Maven (mvn -version)
+
+# Step wise instructions 
+Step 1 - Clone the repo 
+    https://github.com/Nininest/smart-campus-api.git
+Step 2 - Navigate to project folder
+    cd smart-campus-api (Folder containing pom.xml file)
+Step 3 - Build the project
+    mvn clean package
+Step 4 - Start the server
+    mvn tomcat7:run
+The API is live at: http://localhost:8080/api/v1
+Step 5: Stop the server
+    Press ctrl + c in the terminal 
+
+# Sample Curl Commands 
+1. GET 
+    curl -X GET http://localhost:8080/api/v1/
+2. POST - Create a room
+    curl -X POST http://localhost:8080/api/v1/rooms \
+    -H "Content-Type: application/json" \
+    -d '{"id":"room-101", "name":"Level 5, Section A", "capacity":35}'
+3. POST - Create sensor linked to that room 
+    curl -X POST http://localhost:8080/api/v1/sensors \
+    -H "Content-Type: application/json" \
+    -d '{"id":"sensor-T1", "type":"TEMPERATURE","roomID":"room-101","currentValue":22.5,"status":"ACTIVE"}'
+4. Retrive all readings for a sesnsor
+    curl -X GET http://localhost:8080/api/v1/sensors/sensor-T1/readings
+5. Delete a room
+    curl -X DELETE http://localhost:8080/api/v1/rooms/room-101
 
 Part 1: Service Architecture & Setup
      1.1: Project & Application Configuration 
